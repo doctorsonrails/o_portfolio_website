@@ -10,7 +10,7 @@ group :production do
   gem 'pg', '0.14.1'
 end
 
-gem "ember-rails", '0.8.0'
+gem 'ember-rails', github: 'emberjs/ember-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,4 +24,3 @@ gem 'jquery-rails', '2.1.4'
 
 gem 'bourbon', '3.0.1'
 gem 'neat', '1.1.0'
-
