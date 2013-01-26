@@ -1,0 +1,1 @@
+OPortfolioWebsite.EntriesView = Ember.View.extend()

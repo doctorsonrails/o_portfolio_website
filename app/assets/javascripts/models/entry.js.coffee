@@ -6,5 +6,5 @@ OPortfolioWebsite.Entry = DS.Model.extend
 OPortfolioWebsite.Entry = Ember.Object.extend();
 OPortfolioWebsite.Entry.reopenClass
   _all: [{title:'Bernard goes to school'},{title:'LJ goes to work!!'}]
-  all: -> @_all
+  find: -> @_all
 ###
