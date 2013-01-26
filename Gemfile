@@ -10,8 +10,6 @@ group :production do
   gem 'pg', '0.14.1'
 end
 
-gem 'ember-rails', github: 'emberjs/ember-rails'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
