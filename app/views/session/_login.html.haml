@@ -1,11 +1,11 @@
-<section id="login" class="login">
-    <h1>Login</h1>
+%section#login.login
+    %h1 Login
 
-    <form name="login">
-        <label for="login-email">Email</label>
-        <input type="email" id="login-email" name="email" placeholder="e.g: joe.bloggs@example.com" />
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" name="password" />
-        <button type="submit">Login</button>
-    </form>
-</section>
+    =form_tag login_url
+        =label_for :email
+        =text_field_tag :email, "", placeholder: "e.g: joe.bloggs@example.com"
+        
+        =label_for :password
+        =password_field_tag :password
+        
+        =submit_tag "Login"
