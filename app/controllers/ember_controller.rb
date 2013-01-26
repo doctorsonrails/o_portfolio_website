@@ -1,0 +1,3 @@
+class EmberController < ApplicationController
+  
+end
