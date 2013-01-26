@@ -1,15 +1,15 @@
 %section#register.register
     %h1 Register
   
-    =form_tag register_url
-        =label_for :email
+    =form_tag register_path do
+        =label_tag :email
         =text_field_tag :email, "", placeholder: "e.g.: joe.bloggs@example.com"
         
-        =label_for :password
-        =password_field_for :password
+        =label_tag :password
+        =password_field_tag :password
         
-        =label_for :passwordConfirmation
-        =password_field_for :passwordConformation
+        =label_tag :password_confirmation
+        =password_field_tag :password_confirmation
         
         =submit_tag "Register"
         
