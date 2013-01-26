@@ -19,5 +19,5 @@
 //= require_self
 //= require o_portfolio_website
 
-OPortfolioWebsite = Ember.Application.create();
+OPortfolioWebsite = Ember.Application.create({rootElement: 'body>article'});
 //= require_tree .

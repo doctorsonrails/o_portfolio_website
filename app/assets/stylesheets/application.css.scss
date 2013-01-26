@@ -24,11 +24,12 @@
 @import "base";
 
 body {
-    &>header>section, &>footer>section, &>article {
+    &>header>section, &>footer>section, &>article,
+    &>div>header>section, &>div>footer>section, &>div>article {
         @include outer-container;
     }
 
-    &>header {
+    &>header, &>div>header {
         background-color: $blue-two;
 
         &>section {
@@ -36,7 +37,7 @@ body {
         }
     }
 
-    &>footer {
+    &>footer, &>div>footer {
         background-color: $blue-one;
 
         &>section {
