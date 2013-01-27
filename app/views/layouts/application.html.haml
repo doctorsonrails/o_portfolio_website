@@ -12,15 +12,23 @@
     
     %body
     
-    #flash
-        %section
-            -if flash[:error]
-                #error= flash[:error]
-            -if flash[:notice]
-                #notice= flash[:notice]
+        %header
+            %section.central
+                =image_tag("logo.png", alt: "oPortfolio",id: "logo")
+                
+                %section.intro
+                    = yield(:headerinfo)
     
-    = yield(:content)
+        %article
+          
+            %aside.flash
+                -if flash[:error]
+                    .error= flash[:error]
+                -if flash[:notice]
+                    .notice= flash[:notice]
+                    
+            = yield(:content)
 
     %footer
-        %section.footer
+        %section.central
             An <a href="http://nhshackday.com/">NHS Hack Day</a> production.
