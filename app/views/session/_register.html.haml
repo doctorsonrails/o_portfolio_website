@@ -1,7 +1,13 @@
 %section#register.register
-    %h1 Register
+    %h2 Register
   
-    =form_tag register_path do
+    =form_tag user_path do
+        =label_tag :first_name
+        =text_field_tag :first_name, "", placeholder: "e.g.: Joe"
+        
+        =label_tag :last_name
+        =text_field_tag :last_name, "", placeholder: "e.g.: Bloggs"
+        
         =label_tag :email
         =text_field_tag :email, "", placeholder: "e.g.: joe.bloggs@example.com"
         

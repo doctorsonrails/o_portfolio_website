@@ -5,11 +5,29 @@
         =stylesheet_link_tag    "application", :media => "all"
         =javascript_include_tag "application"
         =csrf_meta_tags
+        
+        %script{type:"text/javascript", src:"//use.typekit.net/dwd8tis.js"}
+        :javascript
+            try{Typekit.load();}catch(e){}
     
     %body
     %header
         %section.header
             %h1 oPortfolio
+            -if logged_in?
+                %nav
+                    = link_to "Your Entries", entries_path
+                    = link_to "Add Entry", new_entry_path
+                    = link_to "Your Details", edit_user_path
+                    = link_to "Logout", logout_path
+    
+    #flash
+        %section
+            -if flash[:error]
+                #error= flash[:error]
+            -if flash[:notice]
+                #notice= flash[:notice]
+    
     %article= yield
     
     %footer

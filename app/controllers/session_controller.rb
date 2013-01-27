@@ -6,11 +6,17 @@ class SessionController < ApplicationController
   end
   
   def login
-    
-    
+    if user = OPortfolioApi.authenticate(username: params[:email], password: params[:password])
+      save_session(params[:email], params[:password], user[:id])
+      redirect_to entries_path
+    else
+      flash.now[:error] = "Incorrect Email or Password"
+      render "new"
+    end
   end
   
-  def register
-    
+  def logout
+    reset_session
+    redirect_to root_path
   end
 end

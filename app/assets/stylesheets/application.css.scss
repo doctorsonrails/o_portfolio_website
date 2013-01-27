@@ -24,8 +24,14 @@
 @import "base";
 
 body {
+    
+    font-family:"proxima-nova";
+    font-size:15px;
+    line-height:19px;
+    font-weight:100;
+    
     &>header>section, &>footer>section, &>article,
-    &>div>header>section, &>div>footer>section, &>div>article {
+    &>div>header>section, &>div>footer>section, &>div>article, &>#flash>section {
         @include outer-container;
     }
 
@@ -33,7 +39,19 @@ body {
         background-color: $blue-two;
 
         &>section {
-            padding: $gutter;
+            padding: $gutter 0px;
+        }
+    }
+    
+    #flash {
+        #notice, #error {
+            padding:16px;
+        }
+        #notice {
+            background:green;
+        }
+        #error {
+            background:red;
         }
     }
 
@@ -51,5 +69,18 @@ body {
     .login, .register {
         padding: $gutter;
         @include span-columns(6);
+    }
+    
+    .entry {
+        font-size:18px;
+        h3 {
+            a {
+                font-size:14px;
+            }
+        }
+    }
+    
+    input[type="file"] {
+        float:left;
     }
 }

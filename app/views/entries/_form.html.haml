@@ -1,0 +1,14 @@
+=label_tag :title
+=text_field_tag :title, @entry[:title]
+
+=label_tag :occurred_at
+=select_date @entry[:occurred_at], prefix: "occurred_at", order: [:day, :month, :year]
+
+=label_tag :description
+=text_area_tag :description, @entry[:description]
+
+=label_tag :reflection
+=text_area_tag :reflection, @entry[:reflection]
+
+/=label_tag :image
+/=file_field_tag :image
