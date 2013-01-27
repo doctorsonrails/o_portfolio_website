@@ -22,15 +22,29 @@
 @import "normalize";
 
 body {
-    
+    background-color: $background;
     font-family:"proxima-nova";
     font-size:15px;
     line-height:19px;
     font-weight:100;
     color:#333;
     
-    section {
+    &>header .central, &>article, &>footer .central {
         @include outer-container;
+        padding: $gutter * 2;
+    }
+    
+    &>header {
+        background-color: white;
+        box-shadow: 0 3px 3px rgba($blue-dark, 0.7);
+        position: relative;
+    }
+    &>footer {
+        position: relative;
+        box-shadow: 0 -3px 3px rgba($blue-dark, 0.1);
+    }
+    &>article {
+        background-color: white;
     }
     
     input[type="file"] {
@@ -42,8 +56,8 @@ body {
     }
     
     header {
-        border-bottom:1px solid $blue-two;
         overflow:hidden;
+        
         #logo {
             margin:$gutter $gutter $gutter 0px;
             display:block;
@@ -64,27 +78,6 @@ body {
         }
     }
     
-    .hero {
-        padding:20px;
-        background:lightgreen;
-        overflow:hidden;
-        margin-bottom:10px;
-        
-        #logo {
-            width:200px;
-            margin-right:10px;
-            float:left;
-        }
-        p {
-            font-size:20px;
-            line-height:22px;
-        }
-    }
-    
-    article {
-        margin-top:20px;
-    }
-    
     #flash {
         #notice, #error {
             padding:16px;
@@ -98,7 +91,6 @@ body {
     }
 
     .login, .register {
-        padding:$gutter;
         @include span-columns(6);
     }
 }
