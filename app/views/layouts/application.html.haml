@@ -15,7 +15,7 @@
         %header
             %section.central
                 
-                =link_to image_tag("logo.png", alt: "oPortfolio",id: "logo"), "/"
+                =link_to image_tag("logo.png", alt: "oPortfolio", class: "logo"), "/"
                 
                 %section.intro
                     = yield(:headerinfo)
@@ -32,4 +32,5 @@
 
     %footer
         %section.central
-            An <a href="http://nhshackday.com/">NHS Hack Day</a> production.
+            =link_to image_tag("nhshackday-logo-withlove.png", alt: "An NHS Hack Day production", title: "An NHS Hack Day production", class: "logo"), "http://nhshackday.com/"
+            

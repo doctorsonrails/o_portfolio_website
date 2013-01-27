@@ -1,7 +1,12 @@
 %h1 oPortfolio
 %h2 The Open Portfolio
 %nav
-    = link_to "Your Entries", entries_path
-    = link_to "Add Entry", new_entry_path
-    = link_to "Your Details", edit_user_path
-    = link_to "Logout", logout_path
+    %ul
+        %li
+            = link_to "Your Entries", entries_path
+        %li 
+            = link_to "Add Entry", new_entry_path
+        %li 
+            = link_to "Your Details", edit_user_path
+        %li 
+            = link_to "Logout", logout_path
