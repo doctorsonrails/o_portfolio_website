@@ -2,9 +2,8 @@ require "uri"
 require "net/http" 
 class OPortfolioApi
   
-  if Rails.env.production?
-    @@api_server = "http://o-portfolio-api-2.herokuapp.com"
-  else
+  @@api_server = "http://o-portfolio-api-2.herokuapp.com"
+  if Rails.env.development?
     @@api_server = "http://localhost:5000"
   end
   cattr_reader :api_server
