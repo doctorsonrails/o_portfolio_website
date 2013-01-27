@@ -1,0 +1,98 @@
+// Bootstrap stuff
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/forms";
+@import "bootstrap/tables";
+
+// Our customisations
+
+// HTML5 headings
+
+h1, h2, h3, h4 {
+    font-weight:300;
+}
+
+// Same as base h2
+article section h1{
+    font-size: $baseFontSize * 2.25;
+}
+
+// Same as base h3
+article section article h1, article section h2 {
+    font-size: $baseFontSize * 1.75;
+}
+
+// Same as base h4
+article section article section h1, article  section article h2, article section h3 {
+    font-size: $baseFontSize * 1.25;
+}
+
+// Links
+a {
+    &, &:visited, &:active, &:link {
+        color: $linkColor;
+        text-decoration: none;
+    }
+    
+    &:hover {
+        color: $linkColorHover;
+    }
+}
+
+h1 a, h2 a, h3 a, h4 a {
+    text-transform: lowercase;
+    font-size: 0.75em;
+}
+
+// Forms stuff
+label, button, input[type=submit] {
+    float: left;
+    clear: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+label {
+    min-width: 130px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    @include box-sizing(content-box);
+    padding: 5px;
+    float: left;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        
+        li {
+            float: left;
+            padding: 0 10px;
+            margin: 5px 0;
+            border-left: 1px solid $blue-dark;
+            
+            &:first-child {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+    }
+}
