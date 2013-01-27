@@ -1,6 +1,7 @@
-=content_for :content do
+=content_for :headerinfo do
     =render "layouts/logged_in_header"
-    
+
+=content_for :content do    
     %article
         %section= yield
 
