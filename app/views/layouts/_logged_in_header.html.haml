@@ -1,0 +1,11 @@
+%header
+    %section.header
+        =link_to image_tag("logo.jpg", alt: "oPortfolio"), entries_path, title: "oPortfolio", id: "logo"
+        %h1 oPortfolio
+        %h2 The Open Portfolio
+        -if logged_in?
+            %nav
+                = link_to "Your Entries", entries_path
+                = link_to "Add Entry", new_entry_path
+                = link_to "Your Details", edit_user_path
+                = link_to "Logout", logout_path

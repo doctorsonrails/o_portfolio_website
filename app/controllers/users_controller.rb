@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       redirect_to new_entry_path, notice: "Account Created"
     else
       flash.now[:error] = "There were errors creating this user. Have you previously signed up?"
-      render "new"
+      render "session/new"
     end
   end
   

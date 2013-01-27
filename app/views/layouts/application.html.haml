@@ -11,15 +11,6 @@
             try{Typekit.load();}catch(e){}
     
     %body
-    %header
-        %section.header
-            %h1 oPortfolio
-            -if logged_in?
-                %nav
-                    = link_to "Your Entries", entries_path
-                    = link_to "Add Entry", new_entry_path
-                    = link_to "Your Details", edit_user_path
-                    = link_to "Logout", logout_path
     
     #flash
         %section
@@ -28,8 +19,8 @@
             -if flash[:notice]
                 #notice= flash[:notice]
     
-    %article= yield
-    
+    = yield(:content)
+
     %footer
         %section.footer
             An <a href="http://nhshackday.com/">NHS Hack Day</a> production.

@@ -1,0 +1,7 @@
+=content_for :content do
+    =render "layouts/logged_in_header"
+    
+    %article
+        %section= yield
+
+=render :template => 'layouts/application'
