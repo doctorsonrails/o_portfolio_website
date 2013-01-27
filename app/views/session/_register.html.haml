@@ -1,4 +1,4 @@
-%section#register.register
+#register.register
     %h2 Register
   
     =form_tag user_path do
@@ -14,7 +14,7 @@
         =label_tag :password
         =password_field_tag :password
         
-        =label_tag :password_confirmation
+        =label_tag :password_confirmation, "Confirm Password"
         =password_field_tag :password_confirmation
         
         =submit_tag "Register"

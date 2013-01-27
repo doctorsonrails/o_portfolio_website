@@ -18,11 +18,93 @@
 @import "bourbon";
 @import "neat";
 
-
-// CSS
-@import "normalize";
 @import "base";
+@import "normalize";
 
+body {
+    
+    font-family:"proxima-nova";
+    font-size:15px;
+    line-height:19px;
+    font-weight:100;
+    color:#333;
+    
+    section {
+        @include outer-container;
+    }
+    
+    input[type="file"] {
+        float:left;
+    }
+    
+    h1, h2, h3, h4 {
+        font-weight:300;
+    }
+    
+    header {
+        border-bottom:1px solid $blue-two;
+        overflow:hidden;
+        #logo {
+            margin:$gutter $gutter $gutter 0px;
+            display:block;
+            height:100px;
+            float:left;
+            img {
+                height:100px;
+            }
+        }
+        h1 {
+            margin-top:20px;
+            margin-bottom:0px;
+            font-size:35px;
+        }
+        h2 {
+            margin:0px;
+            font-size:25px;
+        }
+    }
+    
+    .hero {
+        padding:20px;
+        background:lightgreen;
+        overflow:hidden;
+        margin-bottom:10px;
+        
+        #logo {
+            width:200px;
+            margin-right:10px;
+            float:left;
+        }
+        p {
+            font-size:20px;
+            line-height:22px;
+        }
+    }
+    
+    article {
+        margin-top:20px;
+    }
+    
+    #flash {
+        #notice, #error {
+            padding:16px;
+        }
+        #notice {
+            background:green;
+        }
+        #error {
+            background:red;
+        }
+    }
+
+    .login, .register {
+        padding:$gutter;
+        @include span-columns(6);
+    }
+}
+
+
+/*
 body {
     
     font-family:"proxima-nova";
@@ -42,18 +124,6 @@ body {
             padding: $gutter 0px;
         }
     }
-    
-    #flash {
-        #notice, #error {
-            padding:16px;
-        }
-        #notice {
-            background:green;
-        }
-        #error {
-            background:red;
-        }
-    }
 
     &>footer, &>div>footer {
         background-color: $blue-one;
@@ -65,11 +135,6 @@ body {
 
     margin: auto;
     background-color: white;
-
-    .login, .register {
-        padding: $gutter;
-        @include span-columns(6);
-    }
     
     .entry {
         font-size:18px;
@@ -79,8 +144,5 @@ body {
             }
         }
     }
-    
-    input[type="file"] {
-        float:left;
-    }
 }
+*/
