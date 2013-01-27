@@ -14,7 +14,8 @@
     
         %header
             %section.central
-                =image_tag("logo.png", alt: "oPortfolio",id: "logo")
+                
+                =link_to image_tag("logo.png", alt: "oPortfolio",id: "logo"), "/"
                 
                 %section.intro
                     = yield(:headerinfo)
