@@ -15,6 +15,7 @@
 @import "settings";
 
 // Libraries
+@import "bootstrap/bootstrap";
 @import "bourbon";
 @import "neat";
 
@@ -38,6 +39,21 @@ body {
         background-color: white;
         box-shadow: 0 3px 3px rgba($blue-dark, 0.7);
         position: relative;
+        
+        .logo {
+            float: left;
+            margin: $gutter $gutter $gutter 0;
+        }
+        
+        h1 {
+            margin-top:20px;
+            margin-bottom:0px;
+            font-size:35px;
+        }
+        h2 {
+            margin:0px;
+            font-size:25px;
+        }
     }
     &>footer {
         position: relative;
@@ -49,33 +65,6 @@ body {
     
     input[type="file"] {
         float:left;
-    }
-    
-    h1, h2, h3, h4 {
-        font-weight:300;
-    }
-    
-    header {
-        overflow:hidden;
-        
-        #logo {
-            margin:$gutter $gutter $gutter 0px;
-            display:block;
-            height:100px;
-            float:left;
-            img {
-                height:100px;
-            }
-        }
-        h1 {
-            margin-top:20px;
-            margin-bottom:0px;
-            font-size:35px;
-        }
-        h2 {
-            margin:0px;
-            font-size:25px;
-        }
     }
     
     #flash {
@@ -94,47 +83,3 @@ body {
         @include span-columns(6);
     }
 }
-
-
-/*
-body {
-    
-    font-family:"proxima-nova";
-    font-size:15px;
-    line-height:19px;
-    font-weight:100;
-    
-    &>header>section, &>footer>section, &>article,
-    &>div>header>section, &>div>footer>section, &>div>article, &>#flash>section {
-        @include outer-container;
-    }
-
-    &>header, &>div>header {
-        background-color: $blue-two;
-
-        &>section {
-            padding: $gutter 0px;
-        }
-    }
-
-    &>footer, &>div>footer {
-        background-color: $blue-one;
-
-        &>section {
-            padding: $gutter;
-        }
-    }
-
-    margin: auto;
-    background-color: white;
-    
-    .entry {
-        font-size:18px;
-        h3 {
-            a {
-                font-size:14px;
-            }
-        }
-    }
-}
-*/
