@@ -1,0 +1,9 @@
+.entry
+    %h3
+        = entry[:title]
+        =link_to "Edit Entry", edit_entry_path(entry[:id])
+    .occurred_at= entry[:occurred_at] ? entry[:occurred_at].strftime("%A, %e %B %Y") : "Some time ago"
+    .description= entry[:description]
+
+    %h4 Personal Reflection
+    .reflection= entry[:reflection]

@@ -1,0 +1,6 @@
+%h2 Edit Entry
+=form_tag entry_path(@entry[:id]), method: :put, multipart: true do
+
+    =render "form"
+    
+    =submit_tag "Save Entry"

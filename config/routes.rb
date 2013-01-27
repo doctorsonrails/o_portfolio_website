@@ -1,6 +1,11 @@
 OPortfolioWebsite::Application.routes.draw do
   
-  get '/entries' => "entries#index"
+  get "session" => "session#new", as: :new_session
+  post "login" => "session#login", as: :login
+  get "logout" => "session#logout", as: :logout
   
-  root :to => 'ember#index'
+  resource :user
+  resources :entries
+  root :to => 'entries#index'
+  
 end
