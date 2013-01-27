@@ -2,7 +2,8 @@
 =text_field_tag :title, @entry[:title]
 
 =label_tag :occurred_at
-=select_date @entry[:occurred_at], prefix: "occurred_at", order: [:day, :month, :year]
+.datatime
+    =select_date @entry[:occurred_at], prefix: "occurred_at", order: [:day, :month, :year]
 
 =label_tag :description
 =text_area_tag :description, @entry[:description]

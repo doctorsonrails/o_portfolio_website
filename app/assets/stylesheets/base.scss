@@ -76,6 +76,22 @@ input[type="color"],
     @include box-sizing(content-box);
     padding: 5px;
     float: left;
+    margin-bottom: 10px !important;
+}
+
+.datatime select {
+    margin-left: 10px;
+    
+    &:first-child {
+        width: 45px;
+        margin-left: 0;
+    }
+    &:nth-child(2) {
+        width: 100px;
+    }
+    &:nth-child(3) {
+        width: 60px;
+    }
 }
 
 nav {
