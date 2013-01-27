@@ -146,3 +146,10 @@ body {
         }
     }
 }
+
+@media all and (max-width: 1150px) {
+    .forkme img {
+        width: 100px;
+        height: 100px;
+    }
+}
