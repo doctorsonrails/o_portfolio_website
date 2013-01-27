@@ -2,8 +2,9 @@ require "uri"
 require "net/http" 
 class OPortfolioApi
   
-  @@api_server = "http://o-portfolio-api-2.herokuapp.com"
-  if Rails.env.development?
+  if Rails.env.production?
+    @@api_server = "http://o-portfolio-api-2.herokuapp.com"
+  else
     @@api_server = "http://localhost:5000"
   end
   cattr_reader :api_server
@@ -19,7 +20,7 @@ class OPortfolioApi
       req = Net::HTTP::Get.new(uri.request_uri)
       req.basic_auth credentials[:username], credentials[:password]
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
       
@@ -35,7 +36,7 @@ class OPortfolioApi
       req.basic_auth details[:username], details[:password]
       req.set_form_data(details)
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
       
@@ -50,7 +51,7 @@ class OPortfolioApi
       req = Net::HTTP::Get.new(uri.request_uri)
       req.basic_auth credentials[:username], credentials[:password]
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
       
@@ -66,7 +67,7 @@ class OPortfolioApi
       req.basic_auth credentials[:username], credentials[:password]
       req.set_form_data(details)
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
       
@@ -84,7 +85,7 @@ class OPortfolioApi
       req = Net::HTTP::Get.new(uri.request_uri)
       req.basic_auth credentials[:username], credentials[:password]
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
     
@@ -99,7 +100,7 @@ class OPortfolioApi
       req = Net::HTTP::Get.new(uri.request_uri)
       req.basic_auth credentials[:username], credentials[:password]
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
     
@@ -115,7 +116,7 @@ class OPortfolioApi
       req.basic_auth credentials[:username], credentials[:password]
       req.set_form_data(details)
       
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) {|http| http.request(req) }
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) {|http| http.request(req) }
       
       p(res.body) and return nil unless res.code == "200"
       parse_json(res.body)
@@ -129,7 +130,7 @@ class OPortfolioApi
       req.basic_auth credentials[:username], credentials[:password]
       req.set_form_data(details)
     
-      res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
+      res = Net::HTTP.start(uri.host, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
       
