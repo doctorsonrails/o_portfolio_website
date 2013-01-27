@@ -49,6 +49,10 @@ body {
             margin: $gutter $gutter $gutter 0;
         }
         
+        .intro {
+            margin-left: 154px;
+        }
+        
         section p {
             max-width: 35em;
             margin-top: 10px;
@@ -91,11 +95,24 @@ body {
     .login, .register {
         @include span-columns(6);
     }
+    
+    .login {
+        padding-right: $gutter;
+    }
 }
 
-@media all and (max-width: 500px) {
-    html body section.login, html body section.register {
+@media all and (max-width: 540px) {
+    body .login, body .register {
         @include span-columns(12);
+    }
+    body .login {
+        padding-right: 0;
+        padding-bottom: $gutter;
+        border-bottom: 1px solid $background;
+    }
+    
+    body>header .intro {
+        margin-left: 0;
     }
     
     body>header img.logo {
