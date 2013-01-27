@@ -1,12 +1,8 @@
+-content_for :headerinfo do
+    %h2 Welcome to oPortfolio.
+    %p We believe that the portfolios we have to use are convoluted and out of touch.
+    %p This is an open portfolio that anyone can add to
+
 -content_for :content do
-    %article
-        %section
-        
-            .hero
-                =image_tag("logo.png", alt: "oPortfolio",id: "logo")
-                %h2 Welcome to oPortfolio.
-                %p We believe that the portfolios we have to use are convoluted and out of touch.
-                %p This is an open portfolio that anyone can add to 
-        
-            =render "session/login"
-            =render "session/register"
+    =render "session/login"
+    =render "session/register"
